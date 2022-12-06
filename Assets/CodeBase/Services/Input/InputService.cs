@@ -2,16 +2,18 @@
 
 namespace CodeBase.Services.Input
 {
-    public class InputService : IInputService
+    public abstract class InputService : IInputService
     {
-        private const string Horizontal = "Horizontal";
-        private const string Vertical = "Vertical";
-        private const string Button = "Fire";
+        protected const string Horizontal = "Horizontal";
+        protected const string Vertical = "Vertical";
+        private const string ButtonFire = "Fire";
 
-        public Vector2 Axis =>
+        public abstract Vector2 Axis { get; }
+
+        public bool isAttackButton() =>
+            SimpleInput.GetButtonUp(ButtonFire);
+
+        protected static Vector2 SimpleInputAxis() =>
             new Vector2(SimpleInput.GetAxis(Horizontal), SimpleInput.GetAxis(Vertical));
-
-        public bool isAttackButton() => 
-            SimpleInput.GetButtonUp(Button);
     }
 }
