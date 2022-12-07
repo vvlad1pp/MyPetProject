@@ -1,4 +1,4 @@
-using System;
+using CodeBase.CameraLogic;
 using CodeBase.Infrastructure;
 using CodeBase.Services.Input;
 using UnityEngine;
@@ -20,6 +20,7 @@ namespace CodeBase.Player
         private void Start()
         {
             _camera = Camera.main;
+            CameraFollow();
         }
 
         private void Update()
@@ -36,6 +37,14 @@ namespace CodeBase.Player
 
             movementVector += Physics.gravity;
             characterController.Move(movementVector * (movementSpeed * Time.deltaTime));
+        }
+
+        private void CameraFollow(){
+            if (_camera.GetComponent<CameraFollow>())
+            {
+                _camera.GetComponent<CameraFollow>().Follow(gameObject);
+            } 
+             
         }
     }
 }
