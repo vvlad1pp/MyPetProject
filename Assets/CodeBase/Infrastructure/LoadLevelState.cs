@@ -1,10 +1,14 @@
 ﻿using CodeBase.CameraLogic;
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure
 {
     public class LoadLevelState : IPayloadedState<string>
     {
+        private const string PlayerInitialPoint = "PlayerInitialPoint";
+        private const string PlayerPath = "Player/player";
+        private const string HUDPath = "Hud/hud";
         private readonly GameStateMachine _stateMachine;
         private readonly SceneLoader _sceneLoader;
 
@@ -19,8 +23,9 @@ namespace CodeBase.Infrastructure
 
         private void OnLoaded()
         {
-            GameObject player = Instantiate("Player/player");
-            Instantiate("Resources/Hud");
+            var playerInitialPoint = GameObject.FindWithTag(PlayerInitialPoint);
+            GameObject player = Instantiate(PlayerPath, at: playerInitialPoint.transform.position);
+            Instantiate(HUDPath);
             CameraFollow(player);
         }
         
@@ -32,6 +37,11 @@ namespace CodeBase.Infrastructure
         {
             var prefab = Resources.Load<GameObject>(path);
             return Object.Instantiate(prefab);
+        }
+        private GameObject Instantiate(string path, Vector3 at)
+        {
+            var prefab = Resources.Load<GameObject>(path);
+            return Object.Instantiate(prefab, at,quaternion.identity);
         }
 
         public void Exit()
