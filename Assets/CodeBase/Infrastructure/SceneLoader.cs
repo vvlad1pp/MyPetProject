@@ -8,6 +8,7 @@ namespace CodeBase.Infrastructure
     public class SceneLoader
     {
         private readonly ICoroutineRunner _coroutineRunner;
+
         public SceneLoader(ICoroutineRunner coroutineRunner) =>
             _coroutineRunner = coroutineRunner;
 
@@ -15,17 +16,17 @@ namespace CodeBase.Infrastructure
         {
             _coroutineRunner.StartCoroutine(LoadScene(name, onLoaded));
         }
-        
+
         private IEnumerator LoadScene(string name, Action onLoaded = null)
         {
-            AsyncOperation waitNextScene =  SceneManager.LoadSceneAsync(name);
+            AsyncOperation waitNextScene = SceneManager.LoadSceneAsync(name);
             while (!waitNextScene.isDone)
             {
                 yield return null;
                 // yield return new WaitForSeconds(1);
             }
+
             onLoaded?.Invoke();
         }
-         
     }
 }
