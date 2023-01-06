@@ -6,7 +6,6 @@ namespace CodeBase.Infrastructure
     {
         public GameLoopState(GameStateMachine stateMachine)
         {
-            throw new NotImplementedException();
         }
 
         public void Exit()
@@ -14,7 +13,7 @@ namespace CodeBase.Infrastructure
         }
 
         public void Enter()
-        {  
+        {
         }
     }
 }
