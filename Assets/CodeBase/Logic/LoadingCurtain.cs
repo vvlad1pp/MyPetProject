@@ -7,6 +7,7 @@ namespace CodeBase.Logic
     {
         public CanvasGroup Curtain;
 
+        private float _alphaValue = 0.03f;
         private void Awake() =>
             DontDestroyOnLoad(this);
 
@@ -23,8 +24,8 @@ namespace CodeBase.Logic
         {
             while (Curtain.alpha > 0)
             {
-                Curtain.alpha -= 0.03f;
-                yield return new WaitForSeconds(0.03f);
+                Curtain.alpha -= _alphaValue;
+                yield return new WaitForSeconds(_alphaValue);
             }
 
             gameObject.SetActive(false);
