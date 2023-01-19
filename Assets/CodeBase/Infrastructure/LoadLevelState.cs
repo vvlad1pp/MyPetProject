@@ -8,11 +8,11 @@ namespace CodeBase.Infrastructure
     public class LoadLevelState : IPayloadedState<string>
     {
         private const string PlayerInitialPoint = "PlayerInitialPoint";
-        private const string PlayerPath = "Player/player";
-        private const string HUDPath = "Hud/hud";
+
         private readonly GameStateMachine _stateMachine;
         private readonly SceneLoader _sceneLoader;
         private readonly LoadingCurtain _curtain;
+        private readonly IGameFactory _gameFactory;
 
         public LoadLevelState(GameStateMachine stateMachine, SceneLoader sceneLoader, LoadingCurtain curtain)
         {
@@ -28,13 +28,13 @@ namespace CodeBase.Infrastructure
         }
 
         public void Exit() => 
-            _curtain.Hide();
+            _curtain.Hide();                  
 
         private void OnLoaded()
         {
-            var playerInitialPoint = GameObject.FindWithTag(PlayerInitialPoint);
-            GameObject player = Instantiate(PlayerPath, at: playerInitialPoint.transform.position);
-            Instantiate(HUDPath);
+            GameObject player = _gameFactory.CreatePlayer(at: GameObject.FindWithTag(PlayerInitialPoint));
+
+            _gameFactory.CreateHud();
             CameraFollow(player);
             
             _stateMachine.Enter<GameLoopState>();
@@ -43,18 +43,6 @@ namespace CodeBase.Infrastructure
         private void CameraFollow(GameObject player)
         {
             Camera.main.GetComponent<CameraFollow>().Follow(player);
-        }
-
-        private GameObject Instantiate(string path)
-        {
-            var prefab = Resources.Load<GameObject>(path);
-            return Object.Instantiate(prefab);
-        }
-
-        private GameObject Instantiate(string path, Vector3 at)
-        {
-            var prefab = Resources.Load<GameObject>(path);
-            return Object.Instantiate(prefab, at, quaternion.identity);
         }
     }
 }

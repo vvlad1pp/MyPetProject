@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 780.8
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Game
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 492}
   m_MaxSize: {x: 10000, y: 10000}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 110
+  controlID: 46
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 136
+  controlID: 47
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 111
+  controlID: 91
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -622,9 +622,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 8.3101425, y: 43.561848, z: 94.43939}
+    m_Target: {x: -38.81472, y: 39.951523, z: 13.211489}
     speed: 2
-    m_Value: {x: 8.3101425, y: 43.561848, z: 94.43939}
+    m_Value: {x: -38.81472, y: 39.951523, z: 13.211489}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -671,20 +671,20 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.022897853, y: 0.97665644, z: -0.13534695, w: 0.16546059}
+    m_Target: {x: 0.13175888, y: 0.74725014, z: -0.15582688, w: 0.6324995}
     speed: 2
-    m_Value: {x: 0.02289785, y: 0.9766564, z: -0.13534693, w: 0.16546059}
+    m_Value: {x: 0.13175888, y: 0.74725014, z: -0.15582688, w: 0.6324995}
   m_Size:
-    m_Target: 1.5034144
+    m_Target: 3.7160342
     speed: 2
-    m_Value: 1.5034144
+    m_Value: 3.7160342
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
-    m_Speed: 1.9004991
-    m_SpeedNormalized: 0.9499996
+    m_Speed: 1.9601991
+    m_SpeedNormalized: 0.97999954
     m_SpeedMin: 0.01
     m_SpeedMax: 2
     m_EasingEnabled: 1
@@ -869,22 +869,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/CodeBase/Logic
+    - Assets/other
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/CodeBase/Logic
+  - Assets/other
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\User\Unity Project\MyPetProject
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 31}
-    m_SelectedIDs: e46b0000
-    m_LastClickedID: 27620
-    m_ExpandedIDs: 00000000c86b0000ca6b0000cc6b0000ce6b0000d06b0000d26b0000e26b0000
+    m_SelectedIDs: ea6b0000
+    m_LastClickedID: 27626
+    m_ExpandedIDs: 00000000c86b0000ca6b0000cc6b0000ce6b0000d06b0000d26b0000e86b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -939,7 +939,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 8ad10100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
